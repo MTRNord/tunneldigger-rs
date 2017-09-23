@@ -8,7 +8,11 @@ use users::{UsersCache, Users};
 fn main() {
     let cache = UsersCache::new();
     let current_uid = cache.get_current_uid();
-    println!("Your UID is {}", current_uid);
+    if current_uid == 0 {
+        println!("Successfully detected root permissions")
+    } else {
+        println!("Please run tunneldigger as Root!")
+    }
 }
 
 #[cfg(not(target_os = "linux"))]
