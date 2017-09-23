@@ -2,7 +2,7 @@
 extern crate users;
 
 #[cfg(target_os = "linux")]
-use users::{UsersCache};
+use users::{UsersCache, Users};
 
 #[cfg(target_os = "linux")]
 fn main() {
