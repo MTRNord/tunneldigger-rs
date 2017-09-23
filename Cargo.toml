@@ -1,0 +1,7 @@
+[package]
+name = "tunneldigger"
+version = "0.1.0"
+authors = ["MTRNord <mtrnord1@gmail.com>"]
+
+[target.'cfg(unix)'.dependencies]
+iptables = "0.2"
