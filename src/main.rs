@@ -1,17 +1,17 @@
-fn main() {
-    if cfg!(target_os = "linux") {
-        main_a()
-    } else {
-        main_a()
-    }
-}
+#[cfg(target_os = "linux")]
+extern crate users;
 
 #[cfg(target_os = "linux")]
-fn main_a() {
+use users::{UsersCache};
 
+#[cfg(target_os = "linux")]
+fn main() {
+    let cache = UsersCache::new();
+    let current_uid = cache.get_current_uid();
+    println!("Your UID is {}", current_uid);
 }
 
 #[cfg(not(target_os = "linux"))]
-fn main_a() {
+fn main() {
     println!("Tunneldigger only supports Linux.");
 }

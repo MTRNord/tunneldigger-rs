@@ -5,3 +5,4 @@ authors = ["MTRNord <mtrnord1@gmail.com>"]
 
 [target.'cfg(unix)'.dependencies]
 iptables = "0.2"
+users = "0.5.0"
